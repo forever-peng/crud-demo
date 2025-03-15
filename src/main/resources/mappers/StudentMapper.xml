@@ -6,11 +6,13 @@
         <result property="name" column="name"/>
         <result property="birthday" column="birthday"/>
     </resultMap>
+
     <select id="getAllStudents" resultMap="studentResultMap">
-        SELECT `id`,`name`, `birthday`
+        SELECT `id`, `name`, `birthday`
         FROM `student`
         LIMIT #{limit} OFFSET #{offset}
     </select>
+
     <select id="getStudentById" resultMap="studentResultMap">
         SELECT `id`, `name`, `birthday`
         FROM `student`
@@ -27,7 +29,9 @@
         WHERE `id` = #{id}
     </delete>
     <insert id="addStudent">
-        INSERT INTO `student`(name,birthday)
-        VALUES(#{name},#{birthday})
+        INSERT INTO `student`
+            (name, birthday)
+        VALUES
+            (#{name}, #{birthday})
     </insert>
 </mapper>

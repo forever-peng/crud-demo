@@ -8,8 +8,9 @@ import pq.demo.crud.entities.Student;
 import java.util.List;
 
 @Mapper
-public interface StudentMapper {
-    List<Student> getAllStudents(@Param("limit")long limit, @Param("offset")long offset);
+public interface StudentMapper
+{
+    List<Student> getAllStudents(@Param("limit") long limit, @Param("offset") long offset);
     Student getStudentById(long id);
     long updateById(StudentDto student);
     long deleteById(long id);
