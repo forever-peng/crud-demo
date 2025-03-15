@@ -17,7 +17,7 @@ import java.util.List;
 public class StudentController
 {
     @Autowired
-    StudentMapper studentMapper;
+    private StudentMapper studentMapper;
 
     /**
      * 根据可选参数获取表中的数据
