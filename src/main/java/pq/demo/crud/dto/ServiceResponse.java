@@ -12,21 +12,15 @@ public class ServiceResponse<TData> {
     private String message;
     private HashMap<String, Object> other;
 
-
-
     public static <TData> ServiceResponse<TData> buildSuccessResponse(TData data)
     {
         return new ServiceResponse<TData>(0, true, data, "", (HashMap) null);
     }
 
-    /**什么时候会传message
-     */
-    public static <TData> ServiceResponse<TData> buildSuccessResponse(TData data, String message)
+    public static <TData> ServiceResponse<TData> buildErrorResponse(String message)
     {
-        return new ServiceResponse<TData>(0, true, data, message, (HashMap) null);
+        return new ServiceResponse<TData>(0, true, null, message, (HashMap) null);
     }
-
-
 
     public Object getExtra(String key)
     {
